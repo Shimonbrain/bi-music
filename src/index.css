@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.custom-scrollbar{
+
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  /* background: rgba(0, 0, 0, 0.1); */
+  background-color: transparent;
+
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+*::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+
+
+
+/* player css */
+.volume-slider {
+  position: relative;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  height: 19px;
+  outline: none;
+  background-color: transparent;
+  
+}
+.volume-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+  border-radius: 10px;
+}
+/* .volume-slider::before {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 0;
+  width: 10px;
+  height: 3px;
+  background-color: #007db5;
+  cursor: pointer;
+} */
+.volume-slider::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  box-sizing: content-box;
+  border: 2px solid #fff;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  margin: -9px 0 0 0;
+  transition: .2s;
+}
+.volume-slider:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background: #dda66f;
+  transition: .2s;
+}
+
+
+
+
+
+.bg-player{
+  animation: changeBackgroundColor 20s infinite;
+animation-duration:20s;
+animation-timing-function:linear;
+animation-delay:0s;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+animation-play-state:running;
+}
+
+@keyframes changeBackgroundColor {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  25% {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  75% {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+.player-bg-img{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  filter: blur(9px);
+}
+
+.playing {
+  position: relative;
+  width: auto;
+  margin-left: auto;
+  top: 37px;
+}
+
+.now.playing .bar {
+  display: inline-block;
+  position: relative;
+  margin-right: 1px;
+  width: 7px;
+  height: 1px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ff9500, #ff5e3a);
+  color: transparent;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.paused.playing .bar {
+  animation-iteration-count: 1;
+}
+.paused.playing:after {
+  content: "Paused (Lame)"
+}
+.n1 {
+  animation-delay: 0.5s;
+}
+.n2 {
+  animation-delay: 0.2s;
+}
+.n3 {
+  animation-delay: 1.2s;
+}
+.n4 {
+  animation-delay: 0.9s;
+}
+.n5 {
+  animation-delay: 2.3s;
+}
+.n6 {
+  animation-delay: 1.3s;
+}
+.n7 {
+  animation-delay: 3.1s;
+}
+.n8 {
+  animation-delay: 1.9s;
+}
+@keyframes pulse {
+  0% {
+    height: 1px;
+    margin-top: 0;
+  }
+  10% {
+    height: 40px;
+    margin-top: -40px;
+  }
+  50% {
+    height: 20px;
+    margin-top: -20px;
+  }
+  60% {
+    height: 30px;
+    margin-top: -30px;
+  }
+  80% {
+    height: 60px;
+    margin-top: -60px;
+  }
+  100% {
+    height: 1px;
+    margin-top: 0;
+  }
+}
+
+
+.recent-bg{
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+}
+.width-inherit{
+  width: inherit;
+}
